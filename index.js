@@ -20,7 +20,7 @@ app.options('*', cors());
 // parse application/json
 app.use(bodyParser.json());
 
-routes(app);
+routes(app); 
 
 sockets(socketIO);
 
