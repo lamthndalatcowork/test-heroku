@@ -2,7 +2,7 @@ const mysql = require('mysql')
 const settingsConnect = {
   host: "remotemysql.com",
   user: "hc0NRaldjW",
-  password: "",
+  password: "38gScHaW0p",
   database: "hc0NRaldjW"
 };
 module.exports.settingsConnect = settingsConnect;
