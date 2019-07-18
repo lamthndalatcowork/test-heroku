@@ -5,6 +5,7 @@ const routes = require('./api/routes');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const WebSocket = require('ws');
+const url = require('url');
 
 const app = express();
 app.use(bodyParser.urlencoded({
@@ -27,18 +28,14 @@ const server = http.createServer(app);
 //initialize the WebSocket server instance
 const wss = new WebSocket.Server({ server });
 
-wss.on('connection', (ws) => {
 
-    //connection is up, let's add a simple simple event
+wss.on('connection', (ws,req) => {
+    console.log(req);
     ws.on('message', (message) => {
-
-        //log the received message and send it back to the client
         console.log('received: %s', message);
         ws.send(`Hello, you sent -> ${message}`);
     });
-
-    //send immediatly a feedback to the incoming connection
-    ws.send('Hi there, I am a WebSocket server');
+    ws.send('Hi there, I am a WebSocket server -- your url: '+req.url);
 });
 
 //start our server
