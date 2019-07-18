@@ -5,9 +5,6 @@ const routes = require('./api/routes');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const WebSocket = require('ws');
-// const expressWs = require('express-ws')(app);
-// parse application/x-www-form-urlencoded
-
 
 const app = express();
 app.use(bodyParser.urlencoded({

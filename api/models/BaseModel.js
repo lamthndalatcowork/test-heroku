@@ -7,7 +7,7 @@ class BaseModel {
     }
     getData(){
         return new Promise((resolve,reject)=>{
-            qb.get("users",(err,response)=>{
+            qb.get(this.tableName,(err,response)=>{
                 if (err) throw reject (err);
                 resolve(response); 
             })
@@ -19,4 +19,4 @@ class BaseModel {
     }
 }
 
-module.exports = BaseModel
+module.exports = BaseModel;
