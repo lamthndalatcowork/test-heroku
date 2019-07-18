@@ -9,5 +9,5 @@ module.exports = app =>{
     .get(userController.getUser)
     .put(userController.putUpdateUser)
     .delete(userController.deleteUser);
-    app.ws('/rooms/:id',SocketController.testSocket());
+    // app.ws('/rooms/:id',SocketController.testSocket());
 };
