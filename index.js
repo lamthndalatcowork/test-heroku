@@ -36,6 +36,11 @@ wss.on('connection', (ws,req) => {
         ws.send(`Hello, you sent -> ${message}`);
     });
     ws.send('Hi there, I am a WebSocket server -- your url: '+req.url);
+    wss.clients.forEach(function each(client) {
+        if (client.readyState === WebSocket.OPEN) {
+            client.send("One client connected with url: "+ req.url);
+        }
+    });
 });
 
 //start our server
