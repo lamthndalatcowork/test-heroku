@@ -4,7 +4,7 @@
   "description": "making API for web and app",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon --inspect index.js",
     "client": "cd client && npm start",
     "start": "node index.js",
     "server-client": "concurrently \"node index.js\" \"npm run client\""
@@ -24,11 +24,14 @@
     "concurrently": "^4.1.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-ws": "^4.0.0",
     "http": "0.0.0",
     "mysql": "^2.17.1",
     "node-querybuilder": "^2.0.1",
     "socket.io": "^2.2.0",
-    "websocket": "^1.0.28"
+    "url": "^0.11.0",
+    "websocket": "^1.0.28",
+    "ws": "^7.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
